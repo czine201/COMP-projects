@@ -1,0 +1,439 @@
+/** This app is called "Trivial Geeks" and is similar to trivia.
+ *  step 1- Start by selecting a category (Geography, Science, Entertainment, and Sports)
+ *  to be tested on.
+ *  step 2- Then you will enter a number from 1 to 3 to select a difficulty level
+ *  (1 being easy and 3 being hard). Depending on the difficulty level selected, the questions
+ *  will be worth more or less.
+ *  step 3- Once difficulty level has been selected, you will be given a set of 10 multiple
+ *  choice questions to answer, of which 1 will be given at a time. For each question you will
+ *  be given 1 attempt to answer.
+ *  how to win? In order to win, you must get at least 6 of the questions correct or else you
+ *  lose!
+ *  Are you ready for the challenge? Good luck!
+ */
+
+import java.util.Scanner;
+
+public class TrivialGeeks {
+    public static void main(String[] args){
+        String category = "";
+        String selected = SelectACategory(category);
+        if (category.equals("a")){
+            givesGeographyQuestions();
+        }
+        else if (selected.equals("b")){
+            givesEntertainmentQuestions();
+        }
+        else if (selected.equals("c")){
+            givesSportsQuestions();
+        }
+        else if(selected.equals("d")){
+            givesScienceQuestions();
+        }
+
+
+    }
+    public static String SelectACategory(String category){
+        System.out.println("Welcome to Trivial Geeks!\n");
+        System.out.println("Please select a letter between\n\"a\" and \"d\" to choose a category;\n(a)geography\n(b)entertainment\n(c)sports\n(d)science  ");
+        System.out.print("Enter choice: ");
+
+        Scanner console = new Scanner(System.in);
+        category= console.nextLine();
+        category = category.toLowerCase();
+
+        if (category.equals("a")){
+            System.out.println("You have selected geography!");
+        }
+        else if (category.equals("b")){
+            System.out.println("You have selected entertainment!");
+        }
+        else if (category.equals("c")){
+            System.out.println("You have selected sports!");
+        }
+        else if (category.equals("d")){
+            System.out.println("You have selected science!");
+        }
+        return category;
+    }
+    public static void givesGeographyQuestions(){
+        String[] level1Questions = new String[10]; // level 1 questions
+        level1Questions[0] = "1. What is Earth’s Largest Continent? \na. Africa \nb. Europe \nc. Asia";
+        level1Questions[1] = "2. What country is home to the tallest mountain, Mount Everest, in the world? \na. America \nb. Nepal \nc. Guatemala";
+        level1Questions[2] = "3. What country has the largest population? \na. United States of America \nb. Africa \nc. China";
+        level1Questions[3] = "4. Which country has the largest population in the world? \na. United States of America \nb. China \nc. Africa";
+        level1Questions[4] = "5. What American city is the Golden Gate Bridge located in? \na. Chicago \nb. San Francisco \nc. Mexico City";
+        level1Questions[5] = "6. Where is the Eiffel Tower located? \na. Nice, France \nb. Lille, France \nc. Paris, France";
+        level1Questions[6] = "7. What is the name of the largest ocean in the world? \na. The Pacific Ocean \nb. The Indian Ocean \nc. The Arctic Ocean";
+        level1Questions[7] = "8. What is the capital of the American State of California? \na. San Francisco \nb. San Diego \nc. Sacramento";
+        level1Questions[8] = "9. How many States does the United States consist of? \na. 49 \nb. 42 \nc. 50";
+        level1Questions[9] = "10. What planet is closest to Earth? \na. Venus \nb. Mercury \nc. Jupiter";
+
+        String[] level1Answers = new String[10]; // answers for level 1 questions
+        level1Answers[0] = "c";
+        level1Answers[1] = "b";
+        level1Answers[2] = "c";
+        level1Answers[3] = "b";
+        level1Answers[4] = "b";
+        level1Answers[5] = "c";
+        level1Answers[6] = "a";
+        level1Answers[7] = "c";
+        level1Answers[8] = "c";
+        level1Answers[9] = "a";
+
+        String[] level2Questions = new String[10]; // level 2 questions
+        level2Questions[0] = "1.What is the largest island in Africa? \na. Principe \nb. Madagascar  \nc. Comoros";
+        level2Questions[1] = "2. How many countries are inside the United Kingdom? \na. Two \nb. Three \nc. Four";
+        level2Questions[2] = "3. What is the only sea without any coasts? \na. Celebes Sea \nb. Adriatic Sea \nc. Sargasso Sea";
+        level2Questions[3] = "4. How many countries are present in Africa? \na. 50 \nb. 54 \nc. 52";
+        level2Questions[4] = "5. What is called a semi-enclosed body of water where river water mixes with ocean water? \na. Fjords \nb. Tectonic \nc. Estuary";
+        level2Questions[5] = "6. Name the marginal sea which lies between South Korea and the People's Republic of China. \na. Purple Sea \nb. Yellow Sea \nc. Blue Sea";
+        level2Questions[6] = "7. Which of these nations does not border Lake Victoria? \na. Uganda \nb. Kenya \nc. Angola";
+        level2Questions[7] = "8. What is the national language of Turkey? \na. German \nb. French \nc. Turkish ";
+        level2Questions[8] = "9. In which US state would you find Central Valley? \na. California \nb. New Hampshire \nc. Alaska";
+        level2Questions[9] = "10. Which nation's flag is maroon and white? \na. Serbia \nb. Greece \nc. Qatar";
+
+        String[] level2Answers = new String[10]; // level 2 answers
+        level2Answers[0] = "b";
+        level2Answers[1] = "c";
+        level2Answers[2] = "c";
+        level2Answers[3] = "b";
+        level2Answers[4] = "c";
+        level2Answers[5] = "b";
+        level2Answers[6] = "c";
+        level2Answers[7] = "c";
+        level2Answers[8] = "a";
+        level2Answers[9] = "c";
+
+        String[] level3Questions = new String[10]; // level 3 questions
+        level3Questions[0] = "1. Which is the longest river in the world? \na. Amazon \nb. Nile \nc. Mississippi";
+        level3Questions[1] = "2. Brazil shares a border with every South American country, bar two. Can you name those two? \na. Ecuador and Peru \nb. Guyana and Venezuela  \nc. Chile and Ecuador ";
+        level3Questions[2] = "3. How many time zones does Russia have? \na. 11 \nb. 9 \nc. 10";
+        level3Questions[3] = "4. What is the driest continent on Earth? \na. Australia \nb. Africa \nc. Antarctica";
+        level3Questions[4] = "5. What is the name of the highest mountain in Africa? \na. Mawenzi \nb. Mount Kilimanjaro \nc. Mount Emin ";
+        level3Questions[5] = "6. The largest lake in the region, where is Lake Vostok located? \na. Mars \nb. The moon \nc. Antarctica";
+        level3Questions[6] = "7. In which Sea would you find Nevis Island? \na. Caribbean \nb. Black \nc. Mediterranean";
+        level3Questions[7] = "8. What colors make up the Egyptian flag? \na. Red, white and black \nb. Green yellow and white \nc. White and red ";
+        level3Questions[8] = "9. Cape Cod is located in which state? \na. Maine \nb. California \nc. Massachusetts";
+        level3Questions[9] = "10. Located in the Atlantic Ocean, which nation owns Lanzarote Island? \na. Ecuador  \nb. Venezuela \nc. Spain";
+
+        String[] level3Answers = new String[10]; // level 3 answers
+        level3Answers[0] = "a";
+        level3Answers[1] = "c";
+        level3Answers[2] = "a";
+        level3Answers[3] = "c";
+        level3Answers[4] = "b";
+        level3Answers[5] = "c";
+        level3Answers[6] = "a";
+        level3Answers[7] = "a";
+        level3Answers[8] = "c";
+        level3Answers[9] = "c";
+
+        givesQuestions(level1Questions,level2Questions,level3Questions,level1Answers,level2Answers,level3Answers);
+    }
+    public static void givesEntertainmentQuestions(){
+        String[] level1Questions = new String[10]; // level 1 questions
+        level1Questions[0] = "1. The directors of which movie wrote a new language that the minions speak throughout the movie?\na. Despicable Me \nb. Toy Story \nc. Inside Out";
+        level1Questions[1] = "2.Which movie was the last movie of the 'Harry Potter' series? \na. Harry Potter and the Order of the Phoenix \nb. Harry Potter and the Half Blood Prince \nc. Harry Potter and the Deathly Hallows Part 2";
+        level1Questions[2] = "3.In which movie was the iconic DeLorean time machine originally a refrigerator? \na. The Tomorrow War \nb. Back to the Future \nc. Project Almanac";
+        level1Questions[3] = "4.What was the name of the band who sang F.R.I.E.N.D.S.’ theme song? \na. The Rembrandts \nb. Weezer \nc. Pearl Jam";
+        level1Questions[4] = "5.Who is the oldest Kardashian sister? \na. Kendall \nb. Kourtney \nc. Kylie";
+        level1Questions[5] = "6.What day is Star Wars Day? \na. May 4 \nb. April 15 \nc. March 28";
+        level1Questions[6] = "7.Who is Justin Bieber’s wife? \na. Selena Bieber \nb. Taylor Bieber \nc. Hailey Bieber";
+        level1Questions[7] = "8.Who is the artist behind ‘Say So’? \na. Nicki Minaj \nb. Doja Cat \nc. Cardi B";
+        level1Questions[8] = "9. How many kids does Angelina Jolie have? \na. 7 \nb. 5 \nc. 6";
+        level1Questions[9] = "10. How many Harry Potter books and movies are there? \na. 7 books & 8 movies \nb. 8 books & 9 movies \nc. 6 books & 7 movies";
+
+        String[] level1Answers = new String[10]; // answers for level 1 questions
+        level1Answers[0] = "a";
+        level1Answers[1] = "c";
+        level1Answers[2] = "b";
+        level1Answers[3] = "a";
+        level1Answers[4] = "b";
+        level1Answers[5] = "c";
+        level1Answers[6] = "c";
+        level1Answers[7] = "b";
+        level1Answers[8] = "c";
+        level1Answers[9] = "a";
+
+        String[] level2Questions = new String[10]; // level 2 questions
+        level2Questions[0] = "1. How many lifeboats were available on the Titanic? \na. 18 \nb. 17 \nc. 16";
+        level2Questions[1] = "2. In the 1981 movie The Shining, which hotel did Jack and family look after? \na. Stanley Hotel \nb. Hawthorne Hotel \nc. Overlook Hotel";
+        level2Questions[2] = "3. What was the day job of the title character in the Indiana Jones films? \na. College professor \nb. Librarian \nc. High school teacher";
+        level2Questions[3] = "4. On the TV show Friends, what is the name of Joey's imaginary friend? \na. Lionel \nb. Maurice \nc. Samuel";
+        level2Questions[4] = "5. How many siblings does Kim Kardashian have? \na. 7 \nb. 8 \nc. 9";
+        level2Questions[5] = "6. What is the name of the Full House reboot on Netflix? \na. Fuller House \nb. Fullest House \nc. Full House II";
+        level2Questions[6] = "7. Post Malone is the name of what pop-culture rapper? \na. Austin Post \nb. Richard Post \nc. Adrian Post";
+        level2Questions[7] = "8. Name the cities where ‘Home Alone’ took place. \na. Chicago & San Francisco \nb. New York & Chicago \nc. San Diego & New York";
+        level2Questions[8] = "9. Cody Ko is the name of what personality? \na. Youtube star \nb. Athlete \nc. Actor";
+        level2Questions[9] = "10. What horror TV show took over Netflix between 2010 & 2017? \na. American Horror Story \nb. The Haunting \nc. Stranger Things";
+
+        String[] level2Answers = new String[10]; // level 2 answers
+        level2Answers[0] = "c";
+        level2Answers[1] = "c";
+        level2Answers[2] = "a";
+        level2Answers[3] = "b";
+        level2Answers[4] = "c";
+        level2Answers[5] = "a";
+        level2Answers[6] = "a";
+        level2Answers[7] = "b";
+        level2Answers[8] = "a";
+        level2Answers[9] = "c";
+
+        String[] level3Questions = new String[10]; // level 3 questions
+        level3Questions[0] = "1.What kind of car does Donna Meagle have in Parks and Recreation? \na. Mercedes-Benz \nb. Tesla \nc. BMW";
+        level3Questions[1] = "2.What decade is the movie Billionaire Boys Club set? \na. 1970s \nb. 1980s \nc. 1990s";
+        level3Questions[2] = "3.Which band's lead singer is credited with popularizing stage diving? \na. The Stooges \nb. Bee Gees \nc. Red Hot Chili Peppers";
+        level3Questions[3] = "4.In which country did the first season of Survivor take place? \na. Thailand \nb. Indonesia \nc. Malaysia";
+        level3Questions[4] = "5.Who did Forbes the youngest self-made billionaire ever in 2019? \na. Kylie Jenner \nb. Justin Bieber \nc. Taylor Swift";
+        level3Questions[5] = "6.How many times did Ross Geller get divorced on Friends? \na. Two \nb. Three \nc. Four";
+        level3Questions[6] = "7.What was the most popular song on streaming services in 2017? \na. Shape of You  \nb. Despacito \nc. Sign of Times";
+        level3Questions[7] = "8.Which American pop band was originally called ‘Kara’s Flowers’? \na. Maroon 5 \nb. Imagine Dragons \nc. OneRepublic";
+        level3Questions[8] = "9.The word ‘Simba’ comes from which language? \na. Indonesian \nb. Swahili \nc. Nepali";
+        level3Questions[9] = "10.Which K-Pop band had an album enter the top ten of the Billboard 200 Chart? \na. Blackpink \nb. EXO \nc. BTS";
+
+        String[] level3Answers = new String[10]; // level 3 answers
+        level3Answers[0] = "a";
+        level3Answers[1] = "b";
+        level3Answers[2] = "a";
+        level3Answers[3] = "c";
+        level3Answers[4] = "a";
+        level3Answers[5] = "b";
+        level3Answers[6] = "a";
+        level3Answers[7] = "a";
+        level3Answers[8] = "b";
+        level3Answers[9] = "c";
+
+        givesQuestions(level1Questions,level2Questions,level3Questions,level1Answers,level2Answers,level3Answers);
+
+
+    }
+    public static void givesSportsQuestions(){
+        String[] level1Questions = new String[10]; // level 1 questions
+        level1Questions[0] = "1.How long is a football field? \na. 50yd \nb. 100 yd \nc. 10 yd";
+        level1Questions[1] = "2.What does NBA stand for? \na. National Basketball Alliance \nb. National Basketball America \nc. National Basketball Association";
+        level1Questions[2] = "3.What sport did Babe Ruth play? \na. Baseball \nb. Football \nc. Soccer";
+        level1Questions[3] = "4. How many bases are on a baseball field? \na. 4 bases \nb. 5 bases \nc. 3 bases";
+        level1Questions[4] = "5. What color are the goalposts in football? \na. Blue \nb. Yellow \nc. Black";
+        level1Questions[5] = "6. What color flag is waved in motor racing to indicate the winner? \na. Checkered flag \nb. Green flag \nc. Polkadot flag";
+        level1Questions[6] = "7. In what game is “love” a score? \na. Golf \nb. Swimming \nc. Tennis";
+        level1Questions[7] = "8. What type of race is Tour de France? \na. Bike race \nb. F1 \nc. Marathon";
+        level1Questions[8] = "9. What sport does Tiger Woods play? \na. Golf \nb. Soccer \nc. Baseball";
+        level1Questions[9] = "10. In what sport is the Super Bowl in? \na. Tennis \nb. Football \nc. Basketball";
+
+
+
+        String[] level1Answers = new String[10]; // answers for level 1 questions
+        level1Answers[0] = "b";
+        level1Answers[1] = "c";
+        level1Answers[2] = "a";
+        level1Answers[3] = "a";
+        level1Answers[4] = "b";
+        level1Answers[5] = "a";
+        level1Answers[6] = "c";
+        level1Answers[7] = "a";
+        level1Answers[8] = "a";
+        level1Answers[9] = "b";
+
+        String[] level2Questions = new String[10]; // level 2 questions
+        level2Questions[0] = "1. How many players play on one team for baseball? \na. 9 \nb. 8 \nc. 10";
+        level2Questions[1] = "2. How long is a marathon? \na. 24.5 miles \nb. 21.6 miles \nc. 26.2 miles";
+        level2Questions[2] = "3. How many teams did Michael Jordan play for in the NBA? \na. 5 \nb. 2 \nc. 3";
+        level2Questions[3] = "4. What is it called when bowlers make three strikes in a row? \na. Turkey \nb. Ace \nc. Striker";
+        level2Questions[4] = "5. What is a diameter of a basketball hoop? \na. 30 in \nb. 18 in \nc. 10 in";
+        level2Questions[5] = "6. Which sport did Mohammed Ali participate in? \na. Boxing \nb. Swimming \nc. Basketball";
+        level2Questions[6] = "7. What was banned in basketball from 1967 to 1976? \na. Slam dunk \nb. Three-pointers \nc. Lay ups";
+        level2Questions[7] = "8. Which sport is considered to be the king of sports? \na. Soccer \nb. Basketball \nc. Lacrosse";
+        level2Questions[8] = "9. How many points is a touchdown worth in football? \na. 5 points \nb. 3 points \nc. 6 points";
+        level2Questions[9] = "10. What is Canada’s national sport? \na. Hockey \nb. Lacrosse \nc. Baseball";
+
+        String[] level2Answers = new String[10]; // level 2 answers
+        level2Answers[0] = "a";
+        level2Answers[1] = "c";
+        level2Answers[2] = "b";
+        level2Answers[3] = "a";
+        level2Answers[4] = "b";
+        level2Answers[5] = "a";
+        level2Answers[6] = "a";
+        level2Answers[7] = "a";
+        level2Answers[8] = "c";
+        level2Answers[9] = "b";
+
+        String[] level3Questions = new String[10]; // level 3 questions
+        level3Questions[0] = "1. What team scored the most points in the Super Bowl? \na. 76ers \nb. 49ers \nc. Steelers";
+        level3Questions[1] = "2.What country has played in every world cup? \na. Argentine \nb. Germany \nc. Brazil";
+        level3Questions[2] = "3. Who was the first president to throw out the ceremonial first pitch at a Major League Baseball game? \na. George Washington \nb. William Taft \nc. Benjamin Franklin";
+        level3Questions[3] = "4. How many dimples does the average golf ball have? \na. 336 \nb. 522 \nc. 156";
+        level3Questions[4] = "5. How high is a basketball hoop from the ground? \na. 12 ft \nb. 11 ft \nc. 10 ft";
+        level3Questions[5] = "6. What major sporting event is held on Memorial Day? \na. Indianapolis 500 \nb. Tennis Grand Slam \nc. Masters";
+        level3Questions[6] = "7. What is the only sport to be played on the moon? \na. Golf \nb. Soccer \nc. Volleyball";
+        level3Questions[7] = "8. How old was Tiger Woods when he won his first Masters? \na. 18 years old \nb. 21 years old \nc. 17 years old";
+        level3Questions[8] = "9. What material was first used to cover baseballs? \na. Fabrics \nb. Rubber \nc. Cowhide";
+        level3Questions[9] = "10. How many fouls until someone gets ejected in the NBA? \na. 4 \nb. 2 \nc. c";
+
+        String[] level3Answers = new String[10]; // level 3 answers
+        level3Answers[0] = "b";
+        level3Answers[1] = "c";
+        level3Answers[2] = "b";
+        level3Answers[3] = "a";
+        level3Answers[4] = "c";
+        level3Answers[5] = "a";
+        level3Answers[6] = "a";
+        level3Answers[7] = "b";
+        level3Answers[8] = "c";
+        level3Answers[9] = "c";
+
+        givesQuestions(level1Questions,level2Questions,level3Questions,level1Answers,level2Answers,level3Answers);
+
+
+    }
+    public static void givesScienceQuestions(){
+        int points; // used to calculate total points
+        int questionsWrong = 0;
+
+        String[] level1Questions = new String[10];
+        level1Questions[0] = "1. This essential gas is important so that we can breath.\na. Oxygen\nb. Hydrogen\nc. Nitrogen\n";
+        level1Questions[1] = "2. What part of the plant conducts photosynthesis? \na. Stem\nb. Leaf\nc. Roots\n";
+        level1Questions[2] = "3. Animals that eat both plants and meat are called what?\na. Omnivores\nb. Herbivores\nc. Carnivores\n";
+        level1Questions[3] = "4. What do bees collect and use to create honey? \na. Pollen\nb. Seeds\nc. Nectar\n";
+        level1Questions[4] = "5.  What is the largest star in the solar system? \na. The sun\nb. Proxima Centauri\nc. The moon\n";
+        level1Questions[5] = "6. What is the smallest unit of matter? \na. An atom\nb. A cell \nc. Nucleus\n";
+        level1Questions[6] = "7. What is the largest organ in the human body? \na. liver\nb. Heart\n.c skin \n";
+        level1Questions[7] = "8. What planet is farthest from the sun? \na. Neptune\nb. Mars \nc. Earth \n";
+        level1Questions[8] = "9. What is the largest living land animal? \na. Elephant\nb. Lion \nc. Buffalo \n";
+        level1Questions[9] = "10. What is it called when a solid turns into a liquid?\na. Vaporizing\nb. Melting\nc. Freezing \n";
+
+        String[] level1Answers = new String[10]; // answers for level 1 questions
+        level1Answers[0] = "a";
+        level1Answers[1] = "b";
+        level1Answers[2] = "a";
+        level1Answers[3] = "c";
+        level1Answers[4] = "a";
+        level1Answers[5] = "a";
+        level1Answers[6] = "c";
+        level1Answers[7] = "a";
+        level1Answers[8] = "a";
+        level1Answers[9] = "b";
+
+        String[] level2Questions = new String[10];
+        level2Questions[0] = "1. What will two particles of opposing charges do? \na. Repel each other\nb. Attract each other \nc. Create a new particle \n";
+        level2Questions[1] = "2. Which is the most abundant element in earth? \na. Hydrogen\nb. Oxygen \nc. Nitrogen\n ";
+        level2Questions[2] = "3. What name is given for the number of protons found in the nucleus of an atom?\na. Atomic number\nb. Atomic mass \nc. Avogadro’s number\n";
+        level2Questions[3] = "4. What is the hottest planet in the solar system? \na. Venus \nb. Jupiter\nc. Earth \n";
+        level2Questions[4] = "5. What’s the boiling point of water in celsius?\na. 100 degrees celsius \nb. 0 degrees celsius \nc. 32 degrees fahrenheit\n";
+        level2Questions[5] = "6. Where are the longest and strongest bones in the body located?\na. Elbow \nb. Nose \nc. Thigh \n";
+        level2Questions[6] = "7. Kenetic energy is \na. Energy of motion \nb. Potential energy \nc. Chemical energy \n";
+        level2Questions[7] = "8. 8.Electron pairs, when shared between two atoms, help create what kind of bond?\na. Ionic bond\nb. covalent bond \nc. Hydrogen bond\n";
+        level2Questions[8] = "9. How many protons does oxygen have\na. 12\nb. 8\nc. 100\n";
+        level2Questions[9] = "10. What is the chemical formula for water?\na. H2O\nb. CO2\nc. H2\n";
+
+        String[] level2Answers = new String[10];
+        level2Answers[0] = "b";
+        level2Answers[1] = "c";
+        level2Answers[2] = "a";
+        level2Answers[3] = "a";
+        level2Answers[4] = "a";
+        level2Answers[5] = "c";
+        level2Answers[6] = "a";
+        level2Answers[7] = "b";
+        level2Answers[8] = "b";
+        level2Answers[9] = "a";
+
+        String[] level3Questions = new String[10]; // level 3 questions
+        level3Questions[0] = "1. What salivary enzyme helps digest carbohydrates in the mouth?\na. Amylase\nb. Lactase\nc. Water\n";
+        level3Questions[1] = "2. What is the name of the property that allows water molecules to stick to each other?\na. Adhesion\nb.Non-polar bonds\nc. Hydrogen bonding\n";
+        level3Questions[2] = "3. What metals are instantly tarnished when exposed to air?\na.Copper\nb.Lithium\nc.Potassium\n";
+        level3Questions[3] = "4. DNA is made from what type of macromolecules?\na. Lipids \nb. Nucleotides\nc. Amino acids\n";
+        level3Questions[4] = "5. Which of the following has the largest wavelength?\na.Radio Waves\nb.X-rays\nc. Gamma rays\n";
+        level3Questions[5] = "6. What equation uses mass and acceleration to find force?\na. F = ma\nb. G = h-ts\nc. x= y\n";
+        level3Questions[6] = "7. Which continent has no bees\na. Africa\nb. Australia\nc. Antarctica\n ";
+        level3Questions[7] = "8. What molecule is a byproduct of photosynthesis?\na.Oxygen \nb. CO2\nc. Hydrogen\n";
+        level3Questions[8] = "9. his part of the brain deals with hearing and language. \na. Temporal lobe\nb. Occipital lobe \nc. Spinal cord\n";
+        level3Questions[9] = "10.  What is the pH of water?\na. 10\nb. 7\nc.  3\n";
+
+        String[] level3Answers = new String[10]; // level 3 answers
+        level3Answers[0] = "a";
+        level3Answers[1] = "a";
+        level3Answers[2] = "c";
+        level3Answers[3] = "b";
+        level3Answers[4] = "a";
+        level3Answers[5] = "a";
+        level3Answers[6] = "c";
+        level3Answers[7] = "a";
+        level3Answers[8] = "a";
+        level3Answers[9] = "b";
+
+
+
+        givesQuestions(level1Questions,level2Questions,level3Questions,level1Answers,level2Answers,level3Answers);
+
+
+
+    }
+
+    public static void givesQuestions( String[] level1Questions, String[] level2Questions, String[] level3Questions, String[] level1Answers, String[] level2Answers, String[] level3Answers){
+        System.out.print("\nplease enter a number between 1 and 3 " +
+                "\nfor difficulty, easy(1), medium(2), and hard(3).");
+        System.out.print("\nlevel: ");
+        Scanner console = new Scanner(System.in);
+        int Selectedlevel = console.nextInt(); // level of difficulty
+
+        int points = 0;
+        int questionsWrong = 0;
+
+
+        int level1 = 2;
+        int level2 = 5;
+        int level3 = 10;
+
+        String Answer= console.nextLine(); // users response
+
+        if (Selectedlevel == 1){
+            for (int i = 0; i <= level1Questions.length -1 ; i++) {
+                System.out.print(level1Questions[i] + "\n Your Answer: ");
+                Answer = console.nextLine();
+
+                if (level1Answers[i].equals(Answer)) {
+                    System.out.println("Correct!");
+                    points+= level1;
+                }
+                else{
+                    System.out.println("That is incorrect");
+                    questionsWrong++;
+                }
+            }
+        }
+        else if (Selectedlevel == 2){
+            for (int i = 0; i <= level2Questions.length -1; i++) {
+                System.out.println(level2Questions[i] + "Answer: ");
+                Answer = console.nextLine();
+
+                if (level2Answers[i].equals(Answer)){
+                    System.out.println("Correct!");
+                    points+= level2;
+                }
+                else{
+                    System.out.println("That is incorrect");
+                    questionsWrong++;
+                }
+
+            }
+        }
+        else if (Selectedlevel == 3){
+            for (int i = 0; i<= level3Questions.length - 1; i++) {
+                System.out.println(level3Questions[i] + "Answer: ");
+                Answer = console.nextLine();
+
+                if (level3Answers[i].equals(Answer)){
+                    System.out.println("Correct!");
+                    points+= level3;
+                }
+                else {
+                    System.out.println("That is incorrect");
+                    questionsWrong++;
+                }
+            }
+        }
+    }
+}
+
